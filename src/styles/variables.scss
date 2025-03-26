@@ -1,0 +1,41 @@
+// Light theme
+$light-primary-color: #007bff;
+$light-secondary-color: #6c757d;
+$light-background-color: #ffffff;
+$light-text-color: #333333;
+
+// Dark theme
+$dark-primary-color: #4dabf7;
+$dark-secondary-color: #adb5bd;
+$dark-background-color: #1a1a1a;
+$dark-text-color: #e9ecef;
+
+// Typography
+$font-size-base: 1rem;
+$font-size-lg: 1.2rem;
+$font-size-xl: 2.5rem;
+
+// Spacing
+$spacing-base: 1rem;
+$spacing-lg: 2rem;
+
+// Transitions
+$transition-base: 0.3s ease;
+
+// Border radius
+$border-radius: 4px;
+
+// Mixins
+@mixin dark-theme {
+	--primary-color: #{$dark-primary-color};
+	--secondary-color: #{$dark-secondary-color};
+	--background-color: #{$dark-background-color};
+	--text-color: #{$dark-text-color};
+}
+
+@mixin light-theme {
+	--primary-color: #{$light-primary-color};
+	--secondary-color: #{$light-secondary-color};
+	--background-color: #{$light-background-color};
+	--text-color: #{$light-text-color};
+}

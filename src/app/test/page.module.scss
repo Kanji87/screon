@@ -1,0 +1,49 @@
+@import "@/styles/variables.scss";
+
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: $spacing-lg;
+	text-align: center;
+
+	h1 {
+		font-size: $font-size-xl;
+		margin-bottom: $spacing-base;
+		color: $light-primary-color;
+		transition: color $transition-base;
+
+		:global(.dark-theme) & {
+			color: $dark-primary-color;
+		}
+	}
+
+	p {
+		font-size: $font-size-lg;
+		color: $light-secondary-color;
+		margin-bottom: $spacing-lg;
+		transition: color $transition-base;
+
+		:global(.dark-theme) & {
+			color: $dark-secondary-color;
+		}
+	}
+
+	.link {
+		padding: 0.8rem 1.5rem;
+		background-color: $light-primary-color;
+		color: white;
+		border-radius: $border-radius;
+		transition: all $transition-base;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		:global(.dark-theme) & {
+			background-color: $dark-primary-color;
+		}
+	}
+}
