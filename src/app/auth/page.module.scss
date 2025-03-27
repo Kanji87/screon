@@ -1,100 +1,106 @@
+@use "sass:color";
 @import "@/styles/variables.scss";
 
 .authContainer {
-	min-height: 100vh;
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: $dark-background-color;
 	padding: $spacing-base;
 }
 
-.authForm {
+.authCard {
+	background: $dark-secondary-color;
+	padding: $spacing-base * 2;
+	border-radius: $border-radius-base;
 	width: 100%;
 	max-width: 400px;
-	padding: $spacing-base * 2;
-	background: darken($dark-secondary-color, 10%);
-	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-	text-align: center;
-	font-size: 2.5rem;
-	margin-bottom: $spacing-base * 2;
+.title {
 	color: $dark-text-color;
-	font-weight: 700;
+	text-align: center;
+	margin-bottom: $spacing-base * 2;
+	font-size: 1.5rem;
+	font-weight: 600;
 }
 
-.inputGroup {
-	margin-bottom: $spacing-base * 1.5;
-	position: relative;
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-base;
+}
 
-	label {
-		display: block;
-		margin-bottom: $spacing-base * 0.5;
-		color: $dark-text-color;
-		font-size: 1rem;
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-base / 2;
+}
+
+.label {
+	color: $dark-text-color;
+	font-size: 0.9rem;
+}
+
+.input {
+	padding: $spacing-base / 2;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: $border-radius-base;
+	background: color.adjust($dark-secondary-color, $lightness: -5%);
+	color: $dark-text-color;
+	font-size: 1rem;
+	width: 100%;
+	transition: border-color $transition-base;
+
+	&:focus {
+		outline: none;
+		border-color: rgba(255, 255, 255, 0.2);
 	}
 
-	input {
-		width: 100%;
-		padding: $spacing-base;
-		padding-right: $spacing-base * 3;
-		border: 1px solid rgba(255, 255, 255, 0.05);
-		border-radius: 4px;
-		background: rgba(0, 0, 0, 0.2);
-		color: $dark-text-color;
-		font-size: 1rem;
-		transition: border-color $transition-base;
-
-		&:focus {
-			outline: none;
-			border-color: darken($dark-primary-color, 20%);
-		}
-
-		&::placeholder {
-			color: rgba(255, 255, 255, 0.3);
-		}
-	}
-
-	.passwordToggle {
-		position: absolute;
-		right: $spacing-base;
-		top: calc(50% + #{$spacing-base * 0.5});
-		transform: translateY(-50%);
-		background: none;
-		border: none;
+	&::placeholder {
 		color: rgba(255, 255, 255, 0.5);
-		cursor: pointer;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: color $transition-base;
-		width: $spacing-base * 2;
+	}
+}
 
-		&:hover {
-			color: rgba(255, 255, 255, 0.8);
-		}
+.passwordInput {
+	position: relative;
+	width: 100%;
+}
+
+.togglePassword {
+	position: absolute;
+	right: $spacing-base / 2;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	color: $dark-text-color;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color $transition-base;
+
+	&:hover {
+		color: color.adjust($dark-text-color, $lightness: -20%);
 	}
 }
 
 .submitButton {
-	width: 100%;
-	padding: $spacing-base;
-	background: darken($dark-primary-color, 20%);
-	color: white;
+	background: $dark-accent-color;
+	color: $dark-text-color;
 	border: none;
-	border-radius: 4px;
+	padding: $spacing-base / 2;
+	border-radius: $border-radius-base;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: background-color $transition-base;
+	margin-top: $spacing-base;
 
 	&:hover {
-		background: darken($dark-primary-color, 30%);
-	}
-
-	&:active {
-		transform: translateY(1px);
+		background: color.adjust($dark-accent-color, $lightness: -10%);
 	}
 }

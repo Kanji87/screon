@@ -1,3 +1,4 @@
+@use "sass:color";
 @import "@/styles/variables.scss";
 
 // Reset and base styles
@@ -12,6 +13,7 @@ body {
 	max-width: 100vw;
 	overflow-x: hidden;
 	font-family: "Roboto", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
 
 a {

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { MdVisibility, MdVisibilityOff } from 'react-icons/md';
 import styles from './page.module.scss';
 
 export default function AuthPage() {
@@ -25,43 +26,52 @@ export default function AuthPage() {
 
 	return (
 		<div className={styles.authContainer}>
-			<form onSubmit={handleSubmit} className={styles.authForm}>
-				<h1 className={styles.logo}>Screon</h1>
-
-				<div className={styles.inputGroup}>
-					<label htmlFor="login">Логин</label>
-					<input
-						type="text"
-						id="login"
-						value={login}
-						onChange={(e) => setLogin(e.target.value)}
-						required
-					/>
-				</div>
-
-				<div className={styles.inputGroup}>
-					<label htmlFor="password">Пароль</label>
-					<input
-						type={showPassword ? 'text' : 'password'}
-						id="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-						required
-					/>
-					<button
-						type="button"
-						className={styles.passwordToggle}
-						onClick={togglePasswordVisibility}
-						aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
-					>
-						{showPassword ? '👁️' : '👁️‍🗨️'}
+			<div className={styles.authCard}>
+				<h1 className={styles.title}>Авторизация</h1>
+				<form onSubmit={handleSubmit} className={styles.form}>
+					<div className={styles.formGroup}>
+						<label htmlFor="username" className={styles.label}>
+							Логин
+						</label>
+						<input
+							type="text"
+							id="username"
+							value={login}
+							onChange={(e) => setLogin(e.target.value)}
+							className={styles.input}
+							placeholder="Введите логин"
+							required
+						/>
+					</div>
+					<div className={styles.formGroup}>
+						<label htmlFor="password" className={styles.label}>
+							Пароль
+						</label>
+						<div className={styles.passwordInput}>
+							<input
+								type={showPassword ? 'text' : 'password'}
+								id="password"
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+								className={styles.input}
+								placeholder="Введите пароль"
+								required
+							/>
+							<button
+								type="button"
+								className={styles.togglePassword}
+								onClick={togglePasswordVisibility}
+								aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
+							>
+								{showPassword ? <MdVisibilityOff size={20} /> : <MdVisibility size={20} />}
+							</button>
+						</div>
+					</div>
+					<button type="submit" className={styles.submitButton}>
+						Войти
 					</button>
-				</div>
-
-				<button type="submit" className={styles.submitButton}>
-					Войти
-				</button>
-			</form>
+				</form>
+			</div>
 		</div>
 	);
 } 
