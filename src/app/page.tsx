@@ -1,6 +1,5 @@
 import '@/styles/globals.scss';
 import styles from './page.module.scss';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import Header from '@/components/header/header';
 import Card from '@/components/card/card';
@@ -17,7 +16,7 @@ export default function Home() {
 			<main className={styles.main}>
 				<div className={styles.grid}>
 					<Card
-						imageUrl="https://picsum.photos/800/450"
+						imageUrl="https://images.placeholders.dev/800x450/2d2d2d/ffffff?text=Fantasy+World"
 						date="15 марта 2024"
 						time="14:30"
 						hashtags={['fantasy', 'magic', 'adventure']}
@@ -25,7 +24,7 @@ export default function Home() {
 						author="Мастер Слов"
 					/>
 					<Card
-						imageUrl="https://picsum.photos/800/451"
+						imageUrl="https://images.placeholders.dev/800x450/2d2d2d/ffffff?text=Dragon+Legends"
 						date="15 марта 2024"
 						time="15:45"
 						hashtags={['dragons', 'knights', 'legends']}
