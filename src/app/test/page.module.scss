@@ -22,7 +22,7 @@
 
 	p {
 		font-size: $font-size-lg;
-		color: $light-secondary-color;
+		color: $dark-text-color;
 		margin-bottom: $spacing-lg;
 		transition: color $transition-base;
 
@@ -43,7 +43,7 @@
 		}
 
 		:global(.dark-theme) & {
-			background-color: $dark-primary-color;
+			background-color: $dark-accent-color;
 		}
 	}
 }

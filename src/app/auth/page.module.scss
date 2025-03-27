@@ -1,0 +1,106 @@
+@use "sass:color";
+@import "@/styles/variables.scss";
+
+.authContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: $dark-background-color;
+	padding: $spacing-base;
+}
+
+.authCard {
+	background: $dark-secondary-color;
+	padding: $spacing-base * 2;
+	border-radius: $border-radius-base;
+	width: 100%;
+	max-width: 400px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+	color: $dark-text-color;
+	text-align: center;
+	margin-bottom: $spacing-base * 2;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-base;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-base / 2;
+}
+
+.label {
+	color: $dark-text-color;
+	font-size: 0.9rem;
+}
+
+.input {
+	padding: $spacing-base / 2;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: $border-radius-base;
+	background: color.adjust($dark-secondary-color, $lightness: -5%);
+	color: $dark-text-color;
+	font-size: 1rem;
+	width: 100%;
+	transition: border-color $transition-base;
+
+	&:focus {
+		outline: none;
+		border-color: rgba(255, 255, 255, 0.2);
+	}
+
+	&::placeholder {
+		color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+.passwordInput {
+	position: relative;
+	width: 100%;
+}
+
+.togglePassword {
+	position: absolute;
+	right: $spacing-base / 2;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	color: $dark-text-color;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: color $transition-base;
+
+	&:hover {
+		color: color.adjust($dark-text-color, $lightness: -20%);
+	}
+}
+
+.submitButton {
+	background: $dark-accent-color;
+	color: $dark-text-color;
+	border: none;
+	padding: $spacing-base / 2;
+	border-radius: $border-radius-base;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color $transition-base;
+	margin-top: $spacing-base;
+
+	&:hover {
+		background: color.adjust($dark-accent-color, $lightness: -10%);
+	}
+}

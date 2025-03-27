@@ -3,11 +3,8 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
-	padding: $spacing-lg;
-	text-align: center;
+	padding: $spacing-base;
 
 	h1 {
 		font-size: $font-size-xl;
@@ -21,13 +18,13 @@
 	}
 
 	p {
-		font-size: $font-size-lg;
-		color: $light-secondary-color;
+		font-size: $font-size-base;
+		color: $light-text-color;
 		margin-bottom: $spacing-lg;
 		transition: color $transition-base;
 
 		:global(.dark-theme) & {
-			color: $dark-secondary-color;
+			color: $dark-text-color;
 		}
 	}
 
@@ -43,7 +40,15 @@
 		}
 
 		:global(.dark-theme) & {
-			background-color: $dark-primary-color;
+			background-color: $dark-accent-color;
 		}
 	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: $spacing-base;
+	max-width: 1200px;
+	margin: 0 auto;
 }
