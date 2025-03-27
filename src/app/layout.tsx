@@ -17,8 +17,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-	title: 'Next.js проект с SCSS',
-	description: 'Проект на Next.js с использованием SCSS модулей',
+	title: 'Screon - Платформа для игровых скриншотов',
+	description: 'Делитесь лучшими моментами из игр, находите единомышленников и создавайте уникальные истории в сообществе геймеров',
+	keywords: 'игровые скриншоты, геймеры, игровое сообщество, скриншоты, игры, фэнтези, магия, приключения',
+	openGraph: {
+		title: 'Screon - Платформа для игровых скриншотов',
+		description: 'Делитесь лучшими моментами из игр, находите единомышленников и создавайте уникальные истории в сообществе геймеров',
+		type: 'website',
+		locale: 'ru_RU',
+	},
 };
 
 export default function RootLayout({
